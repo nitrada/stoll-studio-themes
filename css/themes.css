@@ -1,0 +1,698 @@
+/**
+ * Theme System for stoll.studio
+ *
+ * This file defines CSS custom properties for theming.
+ * Theme switching is controlled via URL parameter: ?theme=themeName
+ *
+ * To add a new theme:
+ * 1. Copy the [data-theme="default"] block
+ * 2. Rename to your theme name (e.g., [data-theme="dark"])
+ * 3. Update all CSS custom property values
+ * 4. Test with ?theme=yourthemename
+ */
+
+/* ===== DEFAULT THEME ===== */
+:root,
+[data-theme="default"] {
+  /* === COLORS === */
+
+  /* Primary Text Colors */
+  --color-primary: #313131;           /* Main headings */
+  --color-secondary: #515151;         /* Body text */
+  --color-tertiary: #7a7a7a;          /* Muted text */
+  --color-quaternary: #9a9a9a;        /* Very muted (dates, etc.) */
+  --color-light: #c0c0c0;             /* Very light text (taglines) */
+
+  /* Accent Colors */
+  --color-accent-1: #ffff00;          /* Signature yellow */
+  --color-accent-2: #268bd2;          /* Link blue */
+
+  /* Surface Colors */
+  --color-surface: #ffffff;           /* Main background */
+  --color-surface-emphasized: #f5f5f5; /* Table headers, cards */
+  --color-surface-secondary: #f9f9f9; /* Code blocks, blockquotes */
+
+  /* Border Colors */
+  --color-border: #eee;               /* Primary borders */
+  --color-border-secondary: #e5e5e5;  /* Secondary borders */
+
+  /* Semantic Colors */
+  --color-info: #268bd2;              /* Informational (blue) */
+  --color-success: #27ae60;           /* Success states (green) */
+  --color-error: #e74c3c;             /* Error states (red) */
+  --color-warning: #f39c12;           /* Warning states (orange) */
+
+  /* Interactive Colors */
+  --color-link: #268bd2;              /* Links */
+  --color-link-hover: #268bd2;        /* Link hover (with underline) */
+
+  /* Decorative Colors */
+  --color-bullet: #b4b4b4;            /* Custom list bullets */
+  --color-code: #bf616a;              /* Inline code text */
+
+  /* Component-Specific Colors */
+  --color-sticky-bar-bg: #ffff00;     /* Sticky bar background */
+  --color-sticky-bar-text: #000;      /* Sticky bar text */
+  --color-blockquote-bg: #f9f9f9;     /* Blockquote background */
+  --color-blockquote-border: #ffff00; /* Blockquote left border */
+  --color-skip-link-bg: #000;         /* Skip link background */
+  --color-skip-link-text: #fff;       /* Skip link text */
+
+  /* Meta/Secondary Text Colors */
+  --color-meta: #888;                 /* Metadata, captions */
+  --color-meta-secondary: #666;       /* Secondary metadata */
+
+  /* === TYPOGRAPHY === */
+
+  /* Font Families */
+  --font-primary: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --font-monospace: 'IBM Plex Mono', monospace;
+  --font-navigation: 'IBM Plex Mono', monospace;
+
+  /* Font Sizes - Desktop (base: 20px) */
+  --font-size-base: 1rem;             /* 20px */
+  --font-size-small: 0.8rem;          /* 16px - meta, captions */
+  --font-size-medium: 0.85rem;        /* 17px - small text */
+  --font-size-body: 1rem;             /* 20px - body text */
+  --font-size-nav: 1rem;              /* 20px - navigation */
+  --font-size-h6: 1rem;               /* 20px */
+  --font-size-h5: 1rem;               /* 20px */
+  --font-size-h4: 1rem;               /* 20px */
+  --font-size-h3: 1.25rem;            /* 25px */
+  --font-size-h2: 1.3rem;             /* 26px - main statements */
+  --font-size-h1: 2rem;               /* 40px */
+  --font-size-masthead: 1.5rem;       /* 30px */
+
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 600;
+
+  /* Line Heights */
+  --line-height-tight: 1.25;          /* Headings */
+  --line-height-normal: 1.5;          /* Body text */
+  --line-height-relaxed: 1.6;         /* Mobile body */
+
+  /* === SPACING === */
+
+  /* Base Spacing Scale */
+  --space-xs: 0.25rem;                /* 5px - tight spacing */
+  --space-sm: 0.5rem;                 /* 10px - small gaps */
+  --space-md: 1rem;                   /* 20px - standard spacing */
+  --space-lg: 1.5rem;                 /* 30px - section spacing */
+  --space-xl: 2rem;                   /* 40px - large spacing */
+  --space-2xl: 2.5rem;                /* 50px - section dividers */
+  --space-3xl: 3rem;                  /* 60px - masthead margin */
+
+  /* Component-Specific Spacing */
+  --space-gap-small: 0.5rem;          /* 10px */
+  --space-gap-default: 1rem;          /* 20px */
+  --space-gap-large: 2rem;            /* 40px */
+  --space-container-padding: 1rem;    /* 20px */
+  --space-sticky-bar-padding: 1.2em;  /* Sticky bar */
+
+  /* Container */
+  --container-max-width: 50rem;       /* 1000px on desktop */
+}
+
+/* ===== DARK THEME ===== */
+[data-theme="dark"] {
+  /* === COLORS === */
+
+  /* Primary Text Colors */
+  --color-primary: #ffffff;
+  --color-secondary: #e0e0e0;
+  --color-tertiary: #b0b0b0;
+  --color-quaternary: #808080;
+  --color-light: #606060;
+
+  /* Accent Colors */
+  --color-accent-1: #ffff00;
+  --color-accent-2: #5dade2;
+
+  /* Surface Colors */
+  --color-surface: #1a1a1a;
+  --color-surface-emphasized: #2a2a2a;
+  --color-surface-secondary: #242424;
+
+  /* Border Colors */
+  --color-border: #333;
+  --color-border-secondary: #444;
+
+  /* Semantic Colors */
+  --color-info: #5dade2;
+  --color-success: #2ecc71;
+  --color-error: #e74c3c;
+  --color-warning: #f39c12;
+
+  /* Interactive Colors */
+  --color-link: #5dade2;
+  --color-link-hover: #7fc4ed;
+
+  /* Decorative Colors */
+  --color-bullet: #666;
+  --color-code: #ff6b9d;
+
+  /* Component-Specific Colors */
+  --color-sticky-bar-bg: #ffff00;
+  --color-sticky-bar-text: #000;
+  --color-blockquote-bg: #242424;
+  --color-blockquote-border: #ffff00;
+  --color-skip-link-bg: #ffff00;
+  --color-skip-link-text: #000;
+
+  /* Meta/Secondary Text Colors */
+  --color-meta: #999;
+  --color-meta-secondary: #aaa;
+
+  /* === TYPOGRAPHY === */
+  /* Dark theme uses different body font - Hanken Grotesk */
+
+  /* Font Families */
+  --font-primary: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --font-monospace: 'IBM Plex Mono', monospace;
+  --font-navigation: 'IBM Plex Mono', monospace;
+
+  /* Font Sizes - Desktop (base: 20px) */
+  --font-size-base: 1rem;
+  --font-size-small: 0.8rem;
+  --font-size-medium: 0.85rem;
+  --font-size-body: 1rem;
+  --font-size-nav: 1rem;
+  --font-size-h6: 1rem;
+  --font-size-h5: 1rem;
+  --font-size-h4: 1rem;
+  --font-size-h3: 1.25rem;
+  --font-size-h2: 1.3rem;
+  --font-size-h1: 2rem;
+  --font-size-masthead: 1.5rem;
+
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 600;
+
+  /* Line Heights */
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.6;
+
+  /* === SPACING === */
+  /* Spacing inherits from default theme - same values */
+  /* Override only if you want different spacing for dark theme */
+
+  /* Base Spacing Scale */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 2.5rem;
+  --space-3xl: 3rem;
+
+  /* Component-Specific Spacing */
+  --space-gap-small: 0.5rem;
+  --space-gap-default: 1rem;
+  --space-gap-large: 2rem;
+  --space-container-padding: 1rem;
+  --space-sticky-bar-padding: 1.2em;
+
+  /* Container */
+  --container-max-width: 50rem;
+}
+
+/* ===== TEACHING THEME ===== */
+[data-theme="teaching"] {
+  /* === COLORS === */
+
+  /* Primary Text Colors */
+  --color-primary: #ffffff;
+  --color-secondary: rgba(255, 255, 255, 0.75);
+  --color-tertiary: rgba(255, 255, 255, 0.6);
+  --color-quaternary: rgba(255, 255, 255, 0.45);
+  --color-light: rgba(255, 255, 255, 0.3);
+
+  /* Accent Colors */
+  --color-accent-1: #FF0080;
+  --color-accent-2: #D4FF00;
+
+  /* Surface Colors */
+  --color-surface: #3D38F5;
+  --color-surface-emphasized: #312CDB;
+  --color-surface-secondary: #4942F7;
+
+  /* Border Colors */
+  --color-border: rgba(255, 255, 255, 0.15);
+  --color-border-secondary: rgba(255, 255, 255, 0.2);
+
+  /* Semantic Colors */
+  --color-info: #69A0FF;
+  --color-success: #00FF33;
+  --color-error: #FF3366;
+  --color-warning: #FFB800;
+
+  /* Interactive Colors */
+  --color-link: #D4FF00;
+  --color-link-hover: #E5FF33;
+
+  /* Decorative Colors */
+  --color-bullet: rgba(255, 255, 255, 0.4);
+  --color-code: #FF0080;
+
+  /* Component-Specific Colors */
+  --color-sticky-bar-bg: #FF0080;
+  --color-sticky-bar-text: #ffffff;
+  --color-blockquote-bg: #312CDB;
+  --color-blockquote-border: #FF0080;
+  --color-skip-link-bg: #FF0080;
+  --color-skip-link-text: #ffffff;
+
+  /* Meta/Secondary Text Colors */
+  --color-meta: rgba(255, 255, 255, 0.5);
+  --color-meta-secondary: rgba(255, 255, 255, 0.6);
+
+  /* === TYPOGRAPHY === */
+  /* Teaching theme uses same typography as dark theme - Hanken Grotesk */
+
+  /* Font Families */
+  --font-primary: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --font-monospace: 'IBM Plex Mono', monospace;
+  --font-navigation: 'IBM Plex Mono', monospace;
+
+  /* Font Sizes - Desktop (base: 20px) */
+  --font-size-base: 1rem;
+  --font-size-small: 0.8rem;
+  --font-size-medium: 0.85rem;
+  --font-size-body: 1rem;
+  --font-size-nav: 1rem;
+  --font-size-h6: 1rem;
+  --font-size-h5: 1rem;
+  --font-size-h4: 1rem;
+  --font-size-h3: 1.25rem;
+  --font-size-h2: 1.3rem;
+  --font-size-h1: 2rem;
+  --font-size-masthead: 1.5rem;
+
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 600;
+
+  /* Line Heights */
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.6;
+
+  /* === SPACING === */
+  /* Spacing same as other themes */
+
+  /* Base Spacing Scale */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 2.5rem;
+  --space-3xl: 3rem;
+
+  /* Component-Specific Spacing */
+  --space-gap-small: 0.5rem;
+  --space-gap-default: 1rem;
+  --space-gap-large: 2rem;
+  --space-container-padding: 1rem;
+  --space-sticky-bar-padding: 1.2em;
+
+  /* Container */
+  --container-max-width: 50rem;
+}
+
+/* ===== APPLYING THEME VARIABLES ===== */
+
+/* Body and backgrounds */
+body {
+  background-color: var(--color-surface);
+  color: var(--color-secondary);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-primary);
+}
+
+/* Links */
+a {
+  color: var(--color-link);
+}
+
+a:hover,
+a:focus {
+  color: var(--color-link-hover);
+}
+
+/* Strong text */
+strong {
+  color: var(--color-primary);
+}
+
+/* Borders */
+hr {
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-surface);
+}
+
+/* Code */
+code {
+  color: var(--color-code);
+  background-color: var(--color-surface-secondary);
+}
+
+pre {
+  background-color: var(--color-surface-secondary);
+}
+
+pre code {
+  color: inherit;
+  background-color: transparent;
+}
+
+/* Blockquotes */
+blockquote {
+  color: var(--color-tertiary);
+  border-left-color: var(--color-border-secondary);
+}
+
+.project blockquote {
+  background: var(--color-blockquote-bg);
+  border-left: 4px solid var(--color-blockquote-border);
+}
+
+.project blockquote cite,
+.project blockquote small {
+  color: var(--color-meta);
+}
+
+/* Tables */
+table {
+  border: 1px solid var(--color-border-secondary);
+}
+
+td, th {
+  border: 1px solid var(--color-border-secondary);
+}
+
+tbody tr:nth-child(odd) td,
+tbody tr:nth-child(odd) th {
+  background-color: var(--color-surface-secondary);
+}
+
+table th {
+  background-color: var(--color-surface-emphasized);
+}
+
+table td {
+  background-color: var(--color-surface);
+}
+
+/* Masthead */
+.masthead-title {
+  color: var(--color-primary);
+}
+
+.masthead-title a {
+  color: var(--color-primary);
+}
+
+.masthead-title small {
+  color: var(--color-light);
+}
+
+/* Post/Page titles */
+.page-title,
+.post-title,
+.post-title a {
+  color: var(--color-primary);
+}
+
+.post-date {
+  color: var(--color-quaternary);
+}
+
+/* Sticky Bar */
+.bar {
+  background-color: var(--color-sticky-bar-bg);
+  color: var(--color-sticky-bar-text);
+}
+
+.bar p,
+.bar a {
+  color: inherit;
+}
+
+/* Skip Link */
+.skip-link {
+  background: var(--color-skip-link-bg);
+  color: var(--color-skip-link-text);
+}
+
+/* Custom list bullets */
+ul li::before {
+  color: var(--color-bullet);
+}
+
+/* Project components */
+.project-subtitle {
+  color: var(--color-meta-secondary);
+}
+
+.project-meta th {
+  color: var(--color-meta);
+}
+
+.project-meta td {
+  color: var(--color-primary);
+}
+
+.figure figcaption,
+.video-container figcaption {
+  color: var(--color-meta);
+}
+
+.project-credits {
+  color: var(--color-meta-secondary);
+  border-top: 1px solid var(--color-border);
+}
+
+.project-credits a {
+  color: var(--color-primary);
+}
+
+.project-card p {
+  color: var(--color-secondary);
+}
+
+.project-card a:hover h3 {
+  color: var(--color-link);
+}
+
+/* Footer */
+.footer-text {
+  color: var(--color-tertiary);
+}
+
+/* Placeholder gradient */
+.placeholder-image {
+  background: linear-gradient(135deg, var(--color-border) 0%, var(--color-surface-emphasized) 100%);
+}
+
+/* Pagination */
+.pagination {
+  color: var(--color-light);
+}
+
+.pagination-item {
+  border: 1px solid var(--color-border);
+}
+
+a.pagination-item:hover {
+  background-color: var(--color-surface-emphasized);
+}
+
+/* Related posts */
+.related {
+  border-top: 1px solid var(--color-border);
+}
+
+.related-posts li small {
+  color: var(--color-quaternary);
+}
+
+/* Accessibility message */
+.message {
+  color: var(--color-tertiary);
+  background-color: var(--color-surface-secondary);
+}
+
+/* Theme meta tag update (applied via JS) */
+/* The theme-color meta tag will be updated dynamically */
+
+/* ===== APPLYING TYPOGRAPHY VARIABLES ===== */
+
+body,
+html {
+  font-family: var(--font-primary);
+}
+
+code,
+pre {
+  font-family: var(--font-monospace);
+}
+
+/* Headings */
+h1 {
+  font-size: var(--font-size-h1);
+  line-height: var(--line-height-tight);
+  font-weight: var(--font-weight-bold);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  line-height: var(--line-height-tight);
+  font-weight: var(--font-weight-bold);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+  line-height: var(--line-height-tight);
+  font-weight: var(--font-weight-bold);
+}
+
+h4,
+h5,
+h6 {
+  font-size: var(--font-size-h4);
+  line-height: var(--line-height-tight);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Body text */
+body {
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-normal);
+  font-weight: var(--font-weight-regular);
+}
+
+/* Masthead */
+.masthead-title {
+  font-size: var(--font-size-masthead);
+  font-weight: var(--font-weight-regular);
+}
+
+/* Navigation */
+nav ul li a {
+  font-family: var(--font-navigation);
+  font-size: var(--font-size-nav);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Small text */
+.footer-text,
+.project-meta th,
+.project-meta td,
+.figure figcaption,
+.video-container figcaption {
+  font-size: var(--font-size-small);
+}
+
+/* ===== APPLYING SPACING VARIABLES ===== */
+
+/* Container */
+.container {
+  max-width: var(--container-max-width);
+  padding-left: var(--space-container-padding);
+  padding-right: var(--space-container-padding);
+}
+
+/* Margins and padding */
+h1 {
+  margin-bottom: var(--space-sm);
+}
+
+h2 {
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-sm);
+}
+
+h3 {
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-sm);
+}
+
+h4,
+h5,
+h6 {
+  margin-top: var(--space-md);
+}
+
+p {
+  margin-bottom: var(--space-md);
+}
+
+/* Horizontal rules */
+hr {
+  margin: var(--space-lg) 0;
+}
+
+/* Masthead */
+.masthead {
+  padding-top: var(--space-md);
+  padding-bottom: var(--space-md);
+  margin-bottom: var(--space-3xl);
+}
+
+/* Sticky bar */
+.bar {
+  padding: var(--space-sticky-bar-padding);
+}
+
+/* Lists */
+ul,
+ol,
+dl {
+  margin-bottom: var(--space-md);
+}
+
+/* Navigation gaps */
+nav ul {
+  gap: var(--space-gap-default);
+}
+
+/* Grid gaps */
+.w-row,
+#themeshots-grid {
+  gap: var(--space-gap-default);
+}
+
+.project-grid {
+  gap: var(--space-gap-large);
+}
+
+/* Figures */
+.figure,
+.video-container {
+  margin: var(--space-lg) 0;
+}
+
+/* Project components */
+.project-header {
+  margin-bottom: var(--space-lg);
+}
+
+.project-meta {
+  margin-bottom: var(--space-xl);
+}
