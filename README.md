@@ -11,7 +11,8 @@ Shared theming system for all stoll.studio websites.
 
 - **default** - Light theme with Figtree typography
 - **dark** - Dark theme with Hanken Grotesk typography
-- **teaching** - Vibrant blue theme with pink accents and Hanken Grotesk typography
+- **teaching** - Vibrant blue theme (#3D38F5) with pink (#FF0080) and lime (#D4FF00) accents, Hanken Grotesk typography
+- **rating** - Clean minimal theme for assessment/rating tools (white background, black text, red accent)
 
 ## Usage
 
@@ -69,10 +70,11 @@ Replace hardcoded colors with CSS variables:
 
 Access any theme via URL parameter:
 
-```
+```plaintext
 https://your-site.com?theme=default
 https://your-site.com?theme=dark
 https://your-site.com?theme=teaching
+https://your-site.com?theme=rating
 ```
 
 ## Creating New Themes
