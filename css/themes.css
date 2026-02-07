@@ -28,6 +28,7 @@
   --color-accent-2: #268bd2;          /* Link blue */
 
   /* Surface Colors */
+  --color-background: #ffffff;        /* Main background (semantic) */
   --color-surface: #ffffff;           /* Main background */
   --color-surface-emphasized: #f5f5f5; /* Table headers, cards */
   --color-surface-secondary: #f9f9f9; /* Code blocks, blockquotes */
@@ -133,6 +134,7 @@
   --color-accent-2: #5dade2;
 
   /* Surface Colors */
+  --color-background: #1a1a1a;
   --color-surface: #1a1a1a;
   --color-surface-emphasized: #2a2a2a;
   --color-surface-secondary: #242424;
@@ -240,7 +242,8 @@
   --color-accent-1: #FF0080;
   --color-accent-2: #D4FF00;
 
-  /* Surface Colors */
+  /* Surface Colors (semantic: background is the main color) */
+  --color-background: #3D38F5;
   --color-surface: #3D38F5;
   --color-surface-emphasized: #312CDB;
   --color-surface-secondary: #4942F7;
@@ -311,6 +314,113 @@
 
   /* === SPACING === */
   /* Spacing same as other themes */
+
+  /* Base Spacing Scale */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 2.5rem;
+  --space-3xl: 3rem;
+
+  /* Component-Specific Spacing */
+  --space-gap-small: 0.5rem;
+  --space-gap-default: 1rem;
+  --space-gap-large: 2rem;
+  --space-container-padding: 1rem;
+  --space-sticky-bar-padding: 1.2em;
+
+  /* Container */
+  --container-max-width: 50rem;
+}
+
+/* ===== RATING THEME ===== */
+/* Clean, minimal theme for rating/assessment tools */
+[data-theme="rating"] {
+  /* === COLORS === */
+
+  /* Primary Text Colors */
+  --color-primary: #000000;
+  --color-secondary: #666666;
+  --color-tertiary: #7a7a7a;
+  --color-quaternary: #9a9a9a;
+  --color-light: #c0c0c0;
+
+  /* Accent Colors */
+  --color-accent-1: #ff0000;
+  --color-accent-2: #268bd2;
+
+  /* Surface Colors */
+  --color-background: #ffffff;
+  --color-surface: #ffffff;
+  --color-surface-emphasized: #eeeeee;
+  --color-surface-secondary: #f9f9f9;
+
+  /* Border Colors */
+  --color-border: #dddddd;
+  --color-border-secondary: #e5e5e5;
+
+  /* Semantic Colors */
+  --color-info: #268bd2;
+  --color-success: #00a000;
+  --color-error: #e74c3c;
+  --color-warning: #f39c12;
+
+  /* Interactive Colors */
+  --color-link: #268bd2;
+  --color-link-hover: #1a6fa8;
+
+  /* Decorative Colors */
+  --color-bullet: #b4b4b4;
+  --color-code: #bf616a;
+
+  /* Component-Specific Colors */
+  --color-sticky-bar-bg: #ffff00;
+  --color-sticky-bar-text: #000;
+  --color-blockquote-bg: #f9f9f9;
+  --color-blockquote-border: #dddddd;
+  --color-skip-link-bg: #000;
+  --color-skip-link-text: #fff;
+
+  /* Meta/Secondary Text Colors */
+  --color-meta: #888;
+  --color-meta-secondary: #666;
+
+  /* === TYPOGRAPHY === */
+
+  /* Font Families */
+  --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --font-monospace: 'IBM Plex Mono', monospace;
+  --font-navigation: 'IBM Plex Mono', monospace;
+
+  /* Font Sizes */
+  --font-size-base: 1rem;
+  --font-size-small: 0.8rem;
+  --font-size-medium: 0.85rem;
+  --font-size-body: 1rem;
+  --font-size-nav: 1rem;
+  --font-size-h6: 1rem;
+  --font-size-h5: 1rem;
+  --font-size-h4: 1rem;
+  --font-size-h3: 1.25rem;
+  --font-size-h2: 1.3rem;
+  --font-size-h1: 2rem;
+  --font-size-masthead: 1.5rem;
+
+  /* Font Weights */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 600;
+
+  /* Line Heights */
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.6;
+
+  /* === SPACING === */
 
   /* Base Spacing Scale */
   --space-xs: 0.25rem;
