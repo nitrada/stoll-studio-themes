@@ -74,7 +74,6 @@
   --color-blockquote-border: var(--color-accent-1);
   --color-skip-link-bg: var(--color-black);
   --color-skip-link-text: var(--color-white);
-  --color-interactive: var(--color-accent-2); /* Interactive elements (ratings, loading spinners) */
 
   /* === TYPOGRAPHY === */
 
@@ -233,7 +232,6 @@
   --color-blockquote-border: var(--color-accent-1);
   --color-skip-link-bg: var(--color-accent-1);
   --color-skip-link-text: var(--color-white);
-  --color-interactive: var(--color-accent-1); /* Use pink for ratings/spinners in teaching theme */
 
   /* === TYPOGRAPHY === */
   /* Teaching theme uses same typography as dark theme - Hanken Grotesk */
