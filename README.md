@@ -1,6 +1,6 @@
 # Stoll Studio Themes
 
-Shared theming system for all stoll.studio websites.
+Shared theming system for all stoll.studio websites. One source of truth for colors, typography, and visual identity across multiple sites.
 
 ## Contents
 
@@ -12,7 +12,11 @@ Shared theming system for all stoll.studio websites.
 - **default** - Light theme with Figtree typography
 - **dark** - Dark theme with Hanken Grotesk typography
 - **teaching** - Vibrant blue theme (#3D38F5) with pink (#FF0080) and lime (#D4FF00) accents, Hanken Grotesk typography
-- **rating** - Clean minimal theme for assessment/rating tools (white background, black text, red accent)
+
+## Sites Using This System
+
+- [christophe.stoll.studio](https://christophe.stoll.studio) - Personal portfolio
+- [teaching.stoll.studio](https://teaching.stoll.studio) - Teaching resources
 
 ## Usage
 
@@ -74,7 +78,6 @@ Access any theme via URL parameter:
 https://your-site.com?theme=default
 https://your-site.com?theme=dark
 https://your-site.com?theme=teaching
-https://your-site.com?theme=rating
 ```
 
 ## Creating New Themes
@@ -85,40 +88,47 @@ https://your-site.com?theme=rating
 4. Update all CSS custom property values
 5. Test with `?theme=yourtheme`
 
-## Updating Themes in Your Site
+## Development Workflow
+
+### Making Theme Changes
+
+#### Step 1: Edit the shared themes repo
+
+```bash
+cd /path/to/stoll-studio-themes
+# Make your changes to css/themes.css or js/theme-switcher.js
+git add .
+git commit -m "Add new theme / Update colors"
+git push
+```
+
+#### Step 2: Update all consuming sites
+
+```bash
+# Update christophe.stoll.studio
+cd /path/to/christophe.stoll.studio
+git submodule update --remote _themes
+git add _themes
+git commit -m "Update to latest themes"
+git push
+
+# Update teaching.stoll.studio
+cd /path/to/teaching.stoll.studio
+git submodule update --remote _themes
+git add _themes
+git commit -m "Update to latest themes"
+git push
+```
+
+### Quick Update (Single Site)
+
+If you only need to pull latest themes into one site:
 
 ```bash
 cd your-site-repo
 git submodule update --remote _themes
 git add _themes
 git commit -m "Update themes to latest version"
-```
-
-## Development Workflow
-
-### Making Theme Changes
-
-```bash
-# 1. Edit themes in the shared repo
-cd stoll-studio-themes
-# Make your changes to css/themes.css or js/theme-switcher.js
-
-# 2. Commit and push
-git add .
-git commit -m "Add new theme / Update colors"
-git push
-
-# 3. Update in each site
-cd ../christophe.stoll.studio
-git submodule update --remote _themes
-git add _themes
-git commit -m "Update to latest themes"
-git push
-
-cd ../teaching.stoll.studio
-git submodule update --remote _themes
-git add _themes
-git commit -m "Update to latest themes"
 git push
 ```
 

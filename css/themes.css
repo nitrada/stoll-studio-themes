@@ -4,19 +4,27 @@
  * This file defines CSS custom properties for theming.
  * Theme switching is controlled via URL parameter: ?theme=themeName
  *
+ * Architecture:
+ * 1. Base Colors - Define actual color values (text, accents, surfaces, borders)
+ * 2. Semantic Tokens - Reference base colors for specific purposes
+ * 3. Component Tokens - Reference base/semantic colors for components
+ *
  * To add a new theme:
  * 1. Copy the [data-theme="default"] block
  * 2. Rename to your theme name (e.g., [data-theme="dark"])
- * 3. Update all CSS custom property values
- * 4. Test with ?theme=yourthemename
+ * 3. Update ONLY the base color values
+ * 4. Semantic and component tokens will automatically update via references
+ * 5. Test with ?theme=yourthemename
  */
 
 /* ===== DEFAULT THEME ===== */
 :root,
 [data-theme="default"] {
-  /* === COLORS === */
+  /* === BASE COLORS === */
+  /* Only these colors should have actual hex/rgba values */
+  /* All other color tokens should reference these base colors */
 
-  /* Primary Text Colors */
+  /* Text Colors */
   --color-primary: #313131;           /* Main headings */
   --color-secondary: #515151;         /* Body text */
   --color-tertiary: #7a7a7a;          /* Muted text */
@@ -25,10 +33,9 @@
 
   /* Accent Colors */
   --color-accent-1: #ffff00;          /* Signature yellow */
-  --color-accent-2: #ff0000;          /* Rating red */
+  --color-accent-2: #ff0000;          /* Red accent */
 
   /* Surface Colors */
-  --color-background: #ffffff;        /* Main background (semantic) */
   --color-surface: #ffffff;           /* Main background */
   --color-surface-emphasized: #f5f5f5; /* Table headers, cards */
   --color-surface-secondary: #f9f9f9; /* Code blocks, blockquotes */
@@ -43,25 +50,29 @@
   --color-error: #e74c3c;             /* Error states (red) */
   --color-warning: #f39c12;           /* Warning states (orange) */
 
-  /* Interactive Colors */
-  --color-link: #268bd2;              /* Links */
-  --color-link-hover: #268bd2;        /* Link hover (with underline) */
+  /* Pure black/white for high contrast needs */
+  --color-black: #000;
+  --color-white: #fff;
 
-  /* Decorative Colors */
-  --color-bullet: #b4b4b4;            /* Custom list bullets */
-  --color-code: #bf616a;              /* Inline code text */
+  /* === SEMANTIC TOKENS === */
+  /* These reference base colors for specific purposes */
 
-  /* Component-Specific Colors */
-  --color-sticky-bar-bg: #ffff00;     /* Sticky bar background */
-  --color-sticky-bar-text: #000;      /* Sticky bar text */
-  --color-blockquote-bg: #f9f9f9;     /* Blockquote background */
-  --color-blockquote-border: #ffff00; /* Blockquote left border */
-  --color-skip-link-bg: #000;         /* Skip link background */
-  --color-skip-link-text: #fff;       /* Skip link text */
+  --color-link: var(--color-info);
+  --color-link-hover: var(--color-info);
+  --color-bullet: var(--color-tertiary);
+  --color-code: var(--color-accent-2);
+  --color-meta: var(--color-tertiary);
+  --color-meta-secondary: var(--color-quaternary);
 
-  /* Meta/Secondary Text Colors */
-  --color-meta: #888;                 /* Metadata, captions */
-  --color-meta-secondary: #666;       /* Secondary metadata */
+  /* === COMPONENT TOKENS === */
+  /* These reference base/semantic colors for specific components */
+
+  --color-sticky-bar-bg: var(--color-accent-1);
+  --color-sticky-bar-text: var(--color-black);
+  --color-blockquote-bg: var(--color-surface-secondary);
+  --color-blockquote-border: var(--color-accent-1);
+  --color-skip-link-bg: var(--color-black);
+  --color-skip-link-text: var(--color-white);
 
   /* === TYPOGRAPHY === */
 
@@ -120,9 +131,9 @@
 
 /* ===== DARK THEME ===== */
 [data-theme="dark"] {
-  /* === COLORS === */
+  /* === BASE COLORS === */
 
-  /* Primary Text Colors */
+  /* Text Colors */
   --color-primary: #ffffff;
   --color-secondary: #e0e0e0;
   --color-tertiary: #b0b0b0;
@@ -134,7 +145,6 @@
   --color-accent-2: #5dade2;
 
   /* Surface Colors */
-  --color-background: #1a1a1a;
   --color-surface: #1a1a1a;
   --color-surface-emphasized: #2a2a2a;
   --color-surface-secondary: #242424;
@@ -149,89 +159,27 @@
   --color-error: #e74c3c;
   --color-warning: #f39c12;
 
-  /* Interactive Colors */
-  --color-link: #5dade2;
+  /* Pure black/white */
+  --color-black: #000;
+  --color-white: #fff;
+
+  /* === SEMANTIC TOKENS === */
+  /* Link hover needs custom value for dark theme */
   --color-link-hover: #7fc4ed;
-
-  /* Decorative Colors */
-  --color-bullet: #666;
-  --color-code: #ff6b9d;
-
-  /* Component-Specific Colors */
-  --color-sticky-bar-bg: #ffff00;
-  --color-sticky-bar-text: #000;
-  --color-blockquote-bg: #242424;
-  --color-blockquote-border: #ffff00;
-  --color-skip-link-bg: #ffff00;
-  --color-skip-link-text: #000;
-
-  /* Meta/Secondary Text Colors */
-  --color-meta: #999;
-  --color-meta-secondary: #aaa;
 
   /* === TYPOGRAPHY === */
   /* Dark theme uses different body font - Hanken Grotesk */
 
-  /* Font Families */
   --font-primary: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  --font-monospace: 'IBM Plex Mono', monospace;
-  --font-navigation: 'IBM Plex Mono', monospace;
 
-  /* Font Sizes - Desktop (base: 20px) */
-  --font-size-base: 1rem;
-  --font-size-small: 0.8rem;
-  --font-size-medium: 0.85rem;
-  --font-size-body: 1rem;
-  --font-size-nav: 1rem;
-  --font-size-h6: 1rem;
-  --font-size-h5: 1rem;
-  --font-size-h4: 1rem;
-  --font-size-h3: 1.25rem;
-  --font-size-h2: 1.3rem;
-  --font-size-h1: 2rem;
-  --font-size-masthead: 1.5rem;
-
-  /* Font Weights */
-  --font-weight-light: 300;
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 600;
-
-  /* Line Heights */
-  --line-height-tight: 1.25;
-  --line-height-normal: 1.5;
-  --line-height-relaxed: 1.6;
-
-  /* === SPACING === */
-  /* Spacing inherits from default theme - same values */
-  /* Override only if you want different spacing for dark theme */
-
-  /* Base Spacing Scale */
-  --space-xs: 0.25rem;
-  --space-sm: 0.5rem;
-  --space-md: 1rem;
-  --space-lg: 1.5rem;
-  --space-xl: 2rem;
-  --space-2xl: 2.5rem;
-  --space-3xl: 3rem;
-
-  /* Component-Specific Spacing */
-  --space-gap-small: 0.5rem;
-  --space-gap-default: 1rem;
-  --space-gap-large: 2rem;
-  --space-container-padding: 1rem;
-  --space-sticky-bar-padding: 1.2em;
-
-  /* Container */
-  --container-max-width: 50rem;
+  /* All other tokens inherit from :root */
 }
 
 /* ===== TEACHING THEME ===== */
 [data-theme="teaching"] {
-  /* === COLORS === */
+  /* === BASE COLORS === */
 
-  /* Primary Text Colors */
+  /* Text Colors */
   --color-primary: #ffffff;
   --color-secondary: rgba(255, 255, 255, 0.75);
   --color-tertiary: rgba(255, 255, 255, 0.6);
@@ -242,8 +190,7 @@
   --color-accent-1: #FF0080;
   --color-accent-2: #D4FF00;
 
-  /* Surface Colors (semantic: background is the main color) */
-  --color-background: #3D38F5;
+  /* Surface Colors */
   --color-surface: #3D38F5;
   --color-surface-emphasized: #312CDB;
   --color-surface-secondary: #4942F7;
@@ -258,188 +205,39 @@
   --color-error: #FF3366;
   --color-warning: #FFB800;
 
-  /* Interactive Colors */
-  --color-link: #D4FF00;
+  /* Pure black/white */
+  --color-black: #000;
+  --color-white: #fff;
+
+  /* === SEMANTIC TOKENS === */
+  /* Teaching theme uses accent-2 (lime) for links */
+  --color-link: var(--color-accent-2);
   --color-link-hover: #E5FF33;
 
-  /* Decorative Colors */
+  /* Bullet needs custom opacity for teaching */
   --color-bullet: rgba(255, 255, 255, 0.4);
-  --color-code: #FF0080;
 
-  /* Component-Specific Colors */
-  --color-sticky-bar-bg: #FF0080;
-  --color-sticky-bar-text: #ffffff;
-  --color-blockquote-bg: #312CDB;
-  --color-blockquote-border: #FF0080;
-  --color-skip-link-bg: #FF0080;
-  --color-skip-link-text: #ffffff;
+  /* Code uses accent-1 (pink) */
+  --color-code: var(--color-accent-1);
 
-  /* Meta/Secondary Text Colors */
+  /* Meta colors need custom opacity */
   --color-meta: rgba(255, 255, 255, 0.5);
   --color-meta-secondary: rgba(255, 255, 255, 0.6);
+
+  /* === COMPONENT TOKENS === */
+  /* Teaching theme uses pink for UI elements */
+  --color-sticky-bar-bg: var(--color-accent-1);
+  --color-sticky-bar-text: var(--color-white);
+  --color-blockquote-border: var(--color-accent-1);
+  --color-skip-link-bg: var(--color-accent-1);
+  --color-skip-link-text: var(--color-white);
 
   /* === TYPOGRAPHY === */
   /* Teaching theme uses same typography as dark theme - Hanken Grotesk */
 
-  /* Font Families */
   --font-primary: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  --font-monospace: 'IBM Plex Mono', monospace;
-  --font-navigation: 'IBM Plex Mono', monospace;
 
-  /* Font Sizes - Desktop (base: 20px) */
-  --font-size-base: 1rem;
-  --font-size-small: 0.8rem;
-  --font-size-medium: 0.85rem;
-  --font-size-body: 1rem;
-  --font-size-nav: 1rem;
-  --font-size-h6: 1rem;
-  --font-size-h5: 1rem;
-  --font-size-h4: 1rem;
-  --font-size-h3: 1.25rem;
-  --font-size-h2: 1.3rem;
-  --font-size-h1: 2rem;
-  --font-size-masthead: 1.5rem;
-
-  /* Font Weights */
-  --font-weight-light: 300;
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 600;
-
-  /* Line Heights */
-  --line-height-tight: 1.25;
-  --line-height-normal: 1.5;
-  --line-height-relaxed: 1.6;
-
-  /* === SPACING === */
-  /* Spacing same as other themes */
-
-  /* Base Spacing Scale */
-  --space-xs: 0.25rem;
-  --space-sm: 0.5rem;
-  --space-md: 1rem;
-  --space-lg: 1.5rem;
-  --space-xl: 2rem;
-  --space-2xl: 2.5rem;
-  --space-3xl: 3rem;
-
-  /* Component-Specific Spacing */
-  --space-gap-small: 0.5rem;
-  --space-gap-default: 1rem;
-  --space-gap-large: 2rem;
-  --space-container-padding: 1rem;
-  --space-sticky-bar-padding: 1.2em;
-
-  /* Container */
-  --container-max-width: 50rem;
-}
-
-/* ===== RATING THEME ===== */
-/* Clean, minimal theme for rating/assessment tools */
-[data-theme="rating"] {
-  /* === COLORS === */
-
-  /* Primary Text Colors */
-  --color-primary: #000000;
-  --color-secondary: #666666;
-  --color-tertiary: #7a7a7a;
-  --color-quaternary: #9a9a9a;
-  --color-light: #c0c0c0;
-
-  /* Accent Colors */
-  --color-accent-1: #ff0000;
-  --color-accent-2: #ff0000;
-
-  /* Surface Colors */
-  --color-background: #ffffff;
-  --color-surface: #ffffff;
-  --color-surface-emphasized: #eeeeee;
-  --color-surface-secondary: #f9f9f9;
-
-  /* Border Colors */
-  --color-border: #dddddd;
-  --color-border-secondary: #e5e5e5;
-
-  /* Semantic Colors */
-  --color-info: #268bd2;
-  --color-success: #00a000;
-  --color-error: #e74c3c;
-  --color-warning: #f39c12;
-
-  /* Interactive Colors */
-  --color-link: #268bd2;
-  --color-link-hover: #1a6fa8;
-
-  /* Decorative Colors */
-  --color-bullet: #b4b4b4;
-  --color-code: #bf616a;
-
-  /* Component-Specific Colors */
-  --color-sticky-bar-bg: #ffff00;
-  --color-sticky-bar-text: #000;
-  --color-blockquote-bg: #f9f9f9;
-  --color-blockquote-border: #dddddd;
-  --color-skip-link-bg: #000;
-  --color-skip-link-text: #fff;
-
-  /* Meta/Secondary Text Colors */
-  --color-meta: #888;
-  --color-meta-secondary: #666;
-
-  /* === TYPOGRAPHY === */
-
-  /* Font Families */
-  --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  --font-monospace: 'IBM Plex Mono', monospace;
-  --font-navigation: 'IBM Plex Mono', monospace;
-
-  /* Font Sizes */
-  --font-size-base: 1rem;
-  --font-size-small: 0.8rem;
-  --font-size-medium: 0.85rem;
-  --font-size-body: 1rem;
-  --font-size-nav: 1rem;
-  --font-size-h6: 1rem;
-  --font-size-h5: 1rem;
-  --font-size-h4: 1rem;
-  --font-size-h3: 1.25rem;
-  --font-size-h2: 1.3rem;
-  --font-size-h1: 2rem;
-  --font-size-masthead: 1.5rem;
-
-  /* Font Weights */
-  --font-weight-light: 300;
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 600;
-
-  /* Line Heights */
-  --line-height-tight: 1.25;
-  --line-height-normal: 1.5;
-  --line-height-relaxed: 1.6;
-
-  /* === SPACING === */
-
-  /* Base Spacing Scale */
-  --space-xs: 0.25rem;
-  --space-sm: 0.5rem;
-  --space-md: 1rem;
-  --space-lg: 1.5rem;
-  --space-xl: 2rem;
-  --space-2xl: 2.5rem;
-  --space-3xl: 3rem;
-
-  /* Component-Specific Spacing */
-  --space-gap-small: 0.5rem;
-  --space-gap-default: 1rem;
-  --space-gap-large: 2rem;
-  --space-container-padding: 1rem;
-  --space-sticky-bar-padding: 1.2em;
-
-  /* Container */
-  --container-max-width: 50rem;
+  /* All other tokens inherit from :root */
 }
 
 /* ===== APPLYING THEME VARIABLES ===== */
