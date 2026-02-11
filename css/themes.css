@@ -168,6 +168,11 @@
   /* Link hover needs custom value for dark theme */
   --color-link-hover: #7fc4ed;
 
+  /* === COMPONENT TOKENS === */
+  /* Sticky bar uses Accent 2 (blue) with black text for contrast */
+  --color-sticky-bar-bg: var(--color-accent-2);
+  --color-sticky-bar-text: var(--color-black);
+
   /* === TYPOGRAPHY === */
   /* Dark theme uses different body font - Hanken Grotesk */
 
