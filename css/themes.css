@@ -127,7 +127,7 @@
   --space-sticky-bar-padding: 1.2em;  /* Sticky bar */
 
   /* Container */
-  --container-max-width: 50rem;       /* 1000px on desktop */
+  --container-max-width: 72rem;       /* Wide layout for better text flow */
 }
 
 /* ===== DARK THEME ===== */
