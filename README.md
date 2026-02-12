@@ -9,13 +9,13 @@ Shared theming system for all stoll.studio websites. One source of truth for col
 
 ## Available Themes
 
-- **default** - Light theme with Figtree typography
+- **default** - Light theme with Hanken Grotesk typography
 - **dark** - Dark theme with Hanken Grotesk typography
 - **teaching** - Vibrant blue theme (#3D38F5) with pink (#FF0080) and lime (#D4FF00) accents, Hanken Grotesk typography
 
 ## Sites Using This System
 
-- [christophe.stoll.studio](https://christophe.stoll.studio) - Personal portfolio
+- [stoll.studio](https://stoll.studio) - Personal portfolio
 - [teaching.stoll.studio](https://teaching.stoll.studio) - Teaching resources
 
 ## Usage
@@ -87,6 +87,16 @@ https://your-site.com?theme=teaching
 3. Rename to your new theme name: `[data-theme="yourtheme"]`
 4. Update all CSS custom property values
 5. Test with `?theme=yourtheme`
+6. Update documentation in all consuming sites (see Documentation Rule below)
+
+## Documentation Rule
+
+**Always keep all documentation in sync.** When changing themes, tokens, or the switcher, update:
+
+1. **This README** — the canonical theme system reference
+2. **`stoll.studio/_pages/designsystem.md`** — living design system docs (tokens, colors, changelog)
+3. **`stoll.studio/README.md`** — developer reference (architecture, conventions)
+4. **`teaching.stoll.studio/README.md`** — teaching site reference (available themes, variables)
 
 ## Development Workflow
 
@@ -140,6 +150,7 @@ git push
 - Accents: `--color-accent-1`, `--color-accent-2`
 - Surfaces: `--color-surface`, `--color-surface-emphasized`
 - Semantic: `--color-info`, `--color-success`, `--color-error`, `--color-warning`
+- Dividers: `--color-divider` (structural dividers: hr, borders, table rows)
 - Interactive: `--color-link`, `--color-link-hover`
 
 ### Typography (12+ variables)
@@ -160,5 +171,5 @@ MIT License - Use freely across all stoll.studio sites.
 
 ---
 
-**Version:** 1.0.0
-**Last Updated:** 2026-02-07
+**Version:** 1.1.0
+**Last Updated:** 2026-02-12
