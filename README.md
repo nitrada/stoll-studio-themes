@@ -9,14 +9,14 @@ Shared theming system for all stoll.studio websites. One source of truth for col
 
 ## Available Themes
 
-- **default** - Light theme with Hanken Grotesk typography
+- **light** - Light theme with Figtree typography
 - **dark** - Dark theme with Hanken Grotesk typography
-- **teaching** - Vibrant blue theme (#3D38F5) with pink (#FF0080) and lime (#D4FF00) accents, Hanken Grotesk typography
+- **vibrant** - Vibrant blue theme (#3D38F5) with pink (#FF0080) and lime (#D4FF00) accents
 
 ## Sites Using This System
 
 - [stoll.studio](https://stoll.studio) - Personal portfolio
-- [teaching.stoll.studio](https://teaching.stoll.studio) - Teaching resources
+- [vibrant.stoll.studio](https://vibrant.stoll.studio) - Teaching resources
 
 ## Usage
 
@@ -44,7 +44,7 @@ git submodule add https://github.com/yourusername/stoll-studio-themes.git _theme
   (function() {
     const params = new URLSearchParams(window.location.search);
     const theme = params.get('theme');
-    if (theme && theme !== 'default') {
+    if (theme && theme !== 'light') {
       document.documentElement.setAttribute('data-theme', theme);
     }
   })();
@@ -75,9 +75,9 @@ Replace hardcoded colors with CSS variables:
 Access any theme via URL parameter:
 
 ```plaintext
-https://your-site.com?theme=default
+https://your-site.com?theme=light
 https://your-site.com?theme=dark
-https://your-site.com?theme=teaching
+https://your-site.com?theme=vibrant
 ```
 
 ## Creating New Themes
@@ -96,7 +96,7 @@ https://your-site.com?theme=teaching
 1. **This README** — the canonical theme system reference
 2. **`stoll.studio/_pages/designsystem.md`** — living design system docs (tokens, colors, changelog)
 3. **`stoll.studio/README.md`** — developer reference (architecture, conventions)
-4. **`teaching.stoll.studio/README.md`** — teaching site reference (available themes, variables)
+4. **`vibrant.stoll.studio/README.md`** — vibrant site reference (available themes, variables)
 
 ## Development Workflow
 
@@ -122,8 +122,8 @@ git add _themes
 git commit -m "Update to latest themes"
 git push
 
-# Update teaching.stoll.studio
-cd /path/to/teaching.stoll.studio
+# Update vibrant.stoll.studio
+cd /path/to/vibrant.stoll.studio
 git submodule update --remote _themes
 git add _themes
 git commit -m "Update to latest themes"

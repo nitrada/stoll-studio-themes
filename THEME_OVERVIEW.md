@@ -21,9 +21,9 @@ This architecture means:
 
 | Theme | Background | Primary Text | Primary Font | Use Case |
 |-------|-----------|--------------|--------------|----------|
-| **default** | <span style="background:#ffffff;color:#313131;padding:2px 8px;border:1px solid #ccc">White</span> | <span style="background:#313131;color:#fff;padding:2px 8px">Dark gray</span> | Figtree | Personal portfolio, light reading |
+| **light** | <span style="background:#ffffff;color:#313131;padding:2px 8px;border:1px solid #ccc">White</span> | <span style="background:#313131;color:#fff;padding:2px 8px">Dark gray</span> | Figtree | Personal portfolio, light reading |
 | **dark** | <span style="background:#1a1a1a;color:#fff;padding:2px 8px">Near black</span> | <span style="background:#ffffff;color:#000;padding:2px 8px;border:1px solid #ccc">White</span> | Hanken Grotesk | Night mode, reduced eye strain |
-| **teaching** | <span style="background:#3D38F5;color:#fff;padding:2px 8px">Vibrant blue</span> | <span style="background:#ffffff;color:#000;padding:2px 8px;border:1px solid #ccc">White</span> | Hanken Grotesk | Educational content, high energy |
+| **vibrant** | <span style="background:#3D38F5;color:#fff;padding:2px 8px">Vibrant blue</span> | <span style="background:#ffffff;color:#000;padding:2px 8px;border:1px solid #ccc">White</span> | Hanken Grotesk | Educational content, high energy |
 
 ---
 
@@ -33,7 +33,7 @@ This architecture means:
 
 ### Text Colors
 
-| Token | Default | Dark | Teaching | Purpose |
+| Token | Light | Dark | Vibrant | Purpose |
 |-------|---------|------|----------|---------|
 | `--color-primary` | <span style="background:#313131;color:#fff;padding:2px 8px">#313131</span> | <span style="background:#ffffff;color:#000;padding:2px 8px;border:1px solid #ccc">#ffffff</span> | <span style="background:#ffffff;color:#000;padding:2px 8px;border:1px solid #ccc">#ffffff</span> | Main headings |
 | `--color-secondary` | <span style="background:#515151;color:#fff;padding:2px 8px">#515151</span> | <span style="background:#e0e0e0;color:#000;padding:2px 8px">#e0e0e0</span> | <span style="background:rgba(255,255,255,0.75);color:#000;padding:2px 8px;border:1px solid #ccc">rgba(255,255,255,0.75)</span> | Body text |
@@ -43,14 +43,14 @@ This architecture means:
 
 ### Accent Colors
 
-| Token | Default | Dark | Teaching | Purpose |
+| Token | Light | Dark | Vibrant | Purpose |
 |-------|---------|------|----------|---------|
 | `--color-accent-1` | <span style="background:#ffff00;color:#000;padding:2px 8px;border:1px solid #ccc">#ffff00</span> | <span style="background:#ffff00;color:#000;padding:2px 8px;border:1px solid #ccc">#ffff00</span> | <span style="background:#FF0080;color:#fff;padding:2px 8px">#FF0080</span> | Primary brand accent |
 | `--color-accent-2` | <span style="background:#ff0000;color:#fff;padding:2px 8px">#ff0000</span> | <span style="background:#5dade2;color:#fff;padding:2px 8px">#5dade2</span> | <span style="background:#D4FF00;color:#000;padding:2px 8px">#D4FF00</span> | Secondary accent |
 
 ### Surface Colors
 
-| Token | Default | Dark | Teaching | Purpose |
+| Token | Light | Dark | Vibrant | Purpose |
 |-------|---------|------|----------|---------|
 | `--color-surface` | <span style="background:#ffffff;color:#000;padding:2px 8px;border:1px solid #ccc">#ffffff</span> | <span style="background:#1a1a1a;color:#fff;padding:2px 8px">#1a1a1a</span> | <span style="background:#3D38F5;color:#fff;padding:2px 8px">#3D38F5</span> | Main background |
 | `--color-surface-emphasized` | <span style="background:#f5f5f5;color:#000;padding:2px 8px;border:1px solid #ccc">#f5f5f5</span> | <span style="background:#2a2a2a;color:#fff;padding:2px 8px">#2a2a2a</span> | <span style="background:#312CDB;color:#fff;padding:2px 8px">#312CDB</span> | Table headers, cards |
@@ -58,14 +58,14 @@ This architecture means:
 
 ### Border Colors
 
-| Token | Default | Dark | Teaching | Purpose |
+| Token | Light | Dark | Vibrant | Purpose |
 |-------|---------|------|----------|---------|
 | `--color-border` | <span style="background:#eee;color:#000;padding:2px 8px;border:1px solid #ccc">#eee</span> | <span style="background:#333;color:#fff;padding:2px 8px">#333</span> | <span style="background:rgba(255,255,255,0.15);color:#fff;padding:2px 8px;border:1px solid #ccc">rgba(255,255,255,0.15)</span> | Primary borders |
 | `--color-border-secondary` | <span style="background:#e5e5e5;color:#000;padding:2px 8px;border:1px solid #ccc">#e5e5e5</span> | <span style="background:#444;color:#fff;padding:2px 8px">#444</span> | <span style="background:rgba(255,255,255,0.2);color:#fff;padding:2px 8px;border:1px solid #ccc">rgba(255,255,255,0.2)</span> | Secondary borders |
 
 ### Semantic Colors (Base)
 
-| Token | Default | Dark | Teaching | Purpose |
+| Token | Light | Dark | Vibrant | Purpose |
 |-------|---------|------|----------|---------|
 | `--color-info` | <span style="background:#268bd2;color:#fff;padding:2px 8px">#268bd2</span> | <span style="background:#5dade2;color:#fff;padding:2px 8px">#5dade2</span> | <span style="background:#69A0FF;color:#fff;padding:2px 8px">#69A0FF</span> | Informational (blue) |
 | `--color-success` | <span style="background:#27ae60;color:#fff;padding:2px 8px">#27ae60</span> | <span style="background:#2ecc71;color:#fff;padding:2px 8px">#2ecc71</span> | <span style="background:#00FF33;color:#000;padding:2px 8px">#00FF33</span> | Success states (green) |
@@ -87,21 +87,21 @@ This architecture means:
 
 ### Interactive
 
-| Token | Default | Dark | Teaching | References |
+| Token | Light | Dark | Vibrant | References |
 |-------|---------|------|----------|-----------|
 | `--color-link` | `var(--color-info)` | `var(--color-info)` | `var(--color-accent-2)` | Link text |
 | `--color-link-hover` | `var(--color-info)` | `#7fc4ed` (custom) | `#E5FF33` (custom) | Link hover state |
 
 ### Decorative
 
-| Token | Default | Dark | Teaching | References |
+| Token | Light | Dark | Vibrant | References |
 |-------|---------|------|----------|-----------|
 | `--color-bullet` | `var(--color-tertiary)` | Inherits | `rgba(255,255,255,0.4)` (custom) | List bullets |
 | `--color-code` | `var(--color-accent-2)` | Inherits | `var(--color-accent-1)` | Inline code text |
 
 ### Meta Text
 
-| Token | Default | Dark | Teaching | References |
+| Token | Light | Dark | Vibrant | References |
 |-------|---------|------|----------|-----------|
 | `--color-meta` | `var(--color-tertiary)` | Inherits | `rgba(255,255,255,0.5)` (custom) | Metadata, captions |
 | `--color-meta-secondary` | `var(--color-quaternary)` | Inherits | `rgba(255,255,255,0.6)` (custom) | Secondary metadata |
@@ -114,21 +114,21 @@ This architecture means:
 
 ### Sticky Bar
 
-| Token | Default | Dark | Teaching | References |
+| Token | Light | Dark | Vibrant | References |
 |-------|---------|------|----------|-----------|
 | `--color-sticky-bar-bg` | `var(--color-accent-1)` | Inherits | `var(--color-accent-1)` | Background |
 | `--color-sticky-bar-text` | `var(--color-black)` | Inherits | `var(--color-white)` | Text color |
 
 ### Blockquote
 
-| Token | Default | Dark | Teaching | References |
+| Token | Light | Dark | Vibrant | References |
 |-------|---------|------|----------|-----------|
 | `--color-blockquote-bg` | `var(--color-surface-secondary)` | Inherits | Inherits | Background |
 | `--color-blockquote-border` | `var(--color-accent-1)` | Inherits | `var(--color-accent-1)` | Left border |
 
 ### Skip Link (Accessibility)
 
-| Token | Default | Dark | Teaching | References |
+| Token | Light | Dark | Vibrant | References |
 |-------|---------|------|----------|-----------|
 | `--color-skip-link-bg` | `var(--color-black)` | Inherits | `var(--color-accent-1)` | Background |
 | `--color-skip-link-text` | `var(--color-white)` | Inherits | `var(--color-white)` | Text color |
@@ -139,7 +139,7 @@ This architecture means:
 
 ### Font Families
 
-| Token | Default | Dark | Teaching |
+| Token | Light | Dark | Vibrant |
 |-------|---------|------|----------|
 | `--font-primary` | Figtree | Hanken Grotesk | Hanken Grotesk |
 | `--font-monospace` | IBM Plex Mono | IBM Plex Mono | IBM Plex Mono |
@@ -216,7 +216,7 @@ This architecture means:
 
 ## Theme Characteristics
 
-### Default Theme
+### Light Theme
 - **Personality**: Clean, professional, approachable
 - **Key Colors**: Yellow accent (#ffff00), subtle grays
 - **Typography**: Figtree (warm, friendly serif alternative)
@@ -228,7 +228,7 @@ This architecture means:
 - **Typography**: Hanken Grotesk (geometric sans-serif)
 - **Best For**: Night reading, extended sessions, developer-focused content
 
-### Teaching Theme
+### Vibrant Theme
 - **Personality**: High energy, attention-grabbing, vibrant
 - **Key Colors**: Vibrant blue background, hot pink + lime accents
 - **Typography**: Hanken Grotesk (clean, modern)
@@ -257,4 +257,4 @@ To add a new theme, **only define base color values**:
 
 ---
 
-**Last Updated:** 2026-02-08
+**Last Updated:** 2026-02-13

@@ -2,10 +2,10 @@
  * Theme Switcher for stoll.studio
  *
  * Reads ?theme=themeName from URL and applies the theme to the page.
- * Default theme is "default" if no parameter is present.
+ * Default theme is "light" if no parameter is present.
  *
  * Usage:
- * - ?theme=default (or no parameter) - Default theme
+ * - ?theme=light (or no parameter) - Light theme
  * - ?theme=dark - Dark theme (when created)
  * - ?theme=yourtheme - Any custom theme you create
  */
@@ -31,7 +31,7 @@
 
     // Check if theme is already applied (by critical inline script)
     const currentTheme = html.getAttribute('data-theme');
-    const targetTheme = (themeName && themeName !== 'default') ? themeName : null;
+    const targetTheme = (themeName && themeName !== 'light') ? themeName : null;
 
     // Only update if needed
     if (currentTheme !== targetTheme) {
@@ -42,10 +42,10 @@
         if (html.hasAttribute('data-theme')) {
           html.removeAttribute('data-theme');
         }
-        console.log('Theme applied: default');
+        console.log('Theme applied: light');
       }
     } else {
-      console.log('Theme already applied:', targetTheme || 'default');
+      console.log('Theme already applied:', targetTheme || 'light');
     }
 
     // Update theme-color meta tag if present
@@ -97,7 +97,7 @@
    */
   function updateLinksWithTheme() {
     const themeName = getThemeFromURL();
-    if (!themeName || themeName === 'default') return;
+    if (!themeName || themeName === 'light') return;
 
     // Get all internal links (relative URLs and same-origin absolute URLs)
     const links = document.querySelectorAll('a[href]');
@@ -139,7 +139,7 @@
    */
   function initTheme() {
     const themeName = getThemeFromURL();
-    applyTheme(themeName || 'default');
+    applyTheme(themeName || 'light');
 
     // Update all links to include theme parameter
     updateLinksWithTheme();

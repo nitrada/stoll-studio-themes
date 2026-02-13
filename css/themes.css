@@ -10,16 +10,16 @@
  * 3. Component Tokens - Reference base/semantic colors for components
  *
  * To add a new theme:
- * 1. Copy the [data-theme="default"] block
+ * 1. Copy the [data-theme="light"] block
  * 2. Rename to your theme name (e.g., [data-theme="dark"])
  * 3. Update ONLY the base color values
  * 4. Semantic and component tokens will automatically update via references
  * 5. Test with ?theme=yourthemename
  */
 
-/* ===== DEFAULT THEME ===== */
+/* ===== LIGHT THEME ===== */
 :root,
-[data-theme="default"] {
+[data-theme="light"] {
   /* === BASE COLORS === */
   /* Only these colors should have actual hex/rgba values */
   /* All other color tokens should reference these base colors */
@@ -183,8 +183,8 @@
   /* All other tokens inherit from :root */
 }
 
-/* ===== TEACHING THEME ===== */
-[data-theme="teaching"] {
+/* ===== VIBRANT THEME ===== */
+[data-theme="vibrant"] {
   /* === BASE COLORS === */
 
   /* Text Colors */
@@ -219,11 +219,11 @@
 
   /* === SEMANTIC TOKENS === */
   --color-divider: var(--color-border-secondary);
-  /* Teaching theme uses accent-2 (lime) for links */
+  /* Vibrant theme uses accent-2 (lime) for links */
   --color-link: var(--color-accent-2);
   --color-link-hover: #E5FF33;
 
-  /* Bullet needs custom opacity for teaching */
+  /* Bullet needs custom opacity for vibrant */
   --color-bullet: rgba(255, 255, 255, 0.4);
 
   /* Code uses accent-1 (pink) */
@@ -234,7 +234,7 @@
   --color-meta-secondary: rgba(255, 255, 255, 0.6);
 
   /* === COMPONENT TOKENS === */
-  /* Teaching theme uses pink for UI elements */
+  /* Vibrant theme uses pink for UI elements */
   --color-sticky-bar-bg: var(--color-accent-1);
   --color-sticky-bar-text: var(--color-white);
   --color-blockquote-border: var(--color-accent-1);
@@ -242,7 +242,7 @@
   --color-skip-link-text: var(--color-white);
 
   /* === TYPOGRAPHY === */
-  /* Teaching theme uses same typography as dark theme - Hanken Grotesk */
+  /* Vibrant theme uses same typography as dark theme - Hanken Grotesk */
 
   --font-primary: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 
