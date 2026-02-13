@@ -60,7 +60,7 @@
   --color-background: var(--color-surface); /* Deprecated: Use --color-surface instead */
   --color-divider: #ccc;
   --color-link: var(--color-info);
-  --color-link-hover: var(--color-info);
+  --color-link-hover: color-mix(in srgb, var(--color-info) 80%, var(--color-black));
   --color-bullet: var(--color-tertiary);
   --color-code: var(--color-accent-2);
   --color-meta: var(--color-tertiary);
