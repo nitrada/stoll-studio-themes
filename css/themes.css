@@ -249,6 +249,72 @@
   /* All other tokens inherit from :root */
 }
 
+/* ===== TERMINAL THEME ===== */
+[data-theme="terminal"] {
+  /* === BASE COLORS === */
+
+  /* Text Colors */
+  --color-primary: #00FF41;
+  --color-secondary: #00D936;
+  --color-tertiary: #00B32D;
+  --color-quaternary: #009926;
+  --color-light: #007A1F;
+
+  /* Accent Colors */
+  --color-accent-1: #FFFF00;
+  --color-accent-2: #00FFFF;
+
+  /* Surface Colors */
+  --color-surface: #000000;
+  --color-surface-emphasized: #0A0A0A;
+  --color-surface-secondary: #050505;
+
+  /* Border Colors */
+  --color-border: rgba(0, 255, 65, 0.15);
+  --color-border-secondary: rgba(0, 255, 65, 0.2);
+
+  /* Semantic Colors */
+  --color-info: #00BFFF;
+  --color-success: #00FF41;
+  --color-error: #FF0000;
+  --color-warning: #FFFF00;
+
+  /* Pure black/white */
+  --color-black: #000;
+  --color-white: #fff;
+
+  /* === SEMANTIC TOKENS === */
+  --color-divider: var(--color-border-secondary);
+
+  /* Terminal theme uses cyan for links */
+  --color-link: var(--color-accent-2);
+  --color-link-hover: #66FFFF;
+
+  /* Bullet needs custom opacity */
+  --color-bullet: rgba(0, 255, 65, 0.4);
+
+  /* Code uses yellow */
+  --color-code: var(--color-accent-1);
+
+  /* Meta colors need custom opacity */
+  --color-meta: rgba(0, 255, 65, 0.5);
+  --color-meta-secondary: rgba(0, 255, 65, 0.6);
+
+  /* === COMPONENT TOKENS === */
+  /* Terminal uses green for sticky bar, yellow for other UI elements */
+  --color-sticky-bar-bg: var(--color-primary);
+  --color-sticky-bar-text: var(--color-black);
+  --color-blockquote-border: var(--color-accent-1);
+  --color-skip-link-bg: var(--color-accent-1);
+  --color-skip-link-text: var(--color-black);
+
+  /* === TYPOGRAPHY === */
+  /* Terminal uses IBM Plex Mono everywhere */
+  --font-primary: 'IBM Plex Mono', monospace;
+
+  /* All other tokens inherit from :root */
+}
+
 /* ===== APPLYING THEME VARIABLES ===== */
 
 /* Body and backgrounds */
