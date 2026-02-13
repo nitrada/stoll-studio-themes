@@ -286,9 +286,9 @@
   /* === SEMANTIC TOKENS === */
   --color-divider: var(--color-border-secondary);
 
-  /* Terminal theme uses cyan for links */
-  --color-link: var(--color-accent-2);
-  --color-link-hover: #66FFFF;
+  /* Terminal theme uses terminal green for links */
+  --color-link: var(--color-primary);
+  --color-link-hover: #66FF99;
 
   /* Bullet needs custom opacity */
   --color-bullet: rgba(0, 255, 65, 0.4);
