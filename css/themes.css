@@ -312,6 +312,12 @@
   /* Terminal uses IBM Plex Mono everywhere */
   --font-primary: 'IBM Plex Mono', monospace;
 
+  /* Terminal headings use normal weight (not bold) for authentic terminal aesthetic */
+  --font-weight-light: 400;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 400;
+  --font-weight-bold: 400;
+
   /* All other tokens inherit from :root */
 }
 
