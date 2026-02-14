@@ -34,6 +34,20 @@ Themes are named by **visual character**, not by which site uses them:
 4. **`christophe.stoll.studio/README.md`** — developer reference (architecture, conventions)
 5. **`teaching.stoll.studio/README.md`** — teaching site reference (available themes, variables)
 
+### Verification checklist for designsystem.md
+
+When adding or modifying a theme, verify designsystem.md has **complete and accurate** documentation:
+
+- [ ] Theme overview table includes the theme with correct description
+- [ ] Full color documentation section with 3 tables:
+  - [ ] Text colors (Primary → Light)
+  - [ ] Accent, surface and border colors
+  - [ ] Semantic and component colors (divider, link, link hover, sticky bar bg/text)
+- [ ] Typography section (if theme overrides fonts or weights)
+- [ ] Sticky bar documented in Components section
+- [ ] Changelog entry for the addition/modification
+- [ ] **All colors match actual CSS implementation** (no copy-paste errors from other themes)
+
 ### After pushing this repo:
 
 Update the submodule reference in both consuming sites:
