@@ -9,7 +9,7 @@ Shared theming system for all stoll.studio websites. One source of truth for col
 
 ## Available Themes
 
-- **light** - Light theme with Figtree typography
+- **light** - Light theme with Hanken Grotesk typography
 - **dark** - Dark theme with Hanken Grotesk typography
 - **vibrant** - Vibrant blue theme (#3D38F5) with pink (#FF0080) and lime (#D4FF00) accents
 - **terminal** - Terminal theme with bright green (#00FF41) text on black, IBM Plex Mono throughout

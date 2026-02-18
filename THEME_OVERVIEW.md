@@ -21,7 +21,7 @@ This architecture means:
 
 | Theme | Background | Primary Text | Primary Font | Use Case |
 |-------|-----------|--------------|--------------|----------|
-| **light** | <span style="background:#ffffff;color:#313131;padding:2px 8px;border:1px solid #ccc">White</span> | <span style="background:#313131;color:#fff;padding:2px 8px">Dark gray</span> | Figtree | Personal portfolio, light reading |
+| **light** | <span style="background:#ffffff;color:#313131;padding:2px 8px;border:1px solid #ccc">White</span> | <span style="background:#313131;color:#fff;padding:2px 8px">Dark gray</span> | Hanken Grotesk | Personal portfolio, light reading |
 | **dark** | <span style="background:#1a1a1a;color:#fff;padding:2px 8px">Near black</span> | <span style="background:#ffffff;color:#000;padding:2px 8px;border:1px solid #ccc">White</span> | Hanken Grotesk | Night mode, reduced eye strain |
 | **vibrant** | <span style="background:#3D38F5;color:#fff;padding:2px 8px">Vibrant blue</span> | <span style="background:#ffffff;color:#000;padding:2px 8px;border:1px solid #ccc">White</span> | Hanken Grotesk | Educational content, high energy |
 | **terminal** | <span style="background:#000;color:#00FF41;padding:2px 8px;border:1px solid #00FF41">Black</span> | <span style="background:#00FF41;color:#000;padding:2px 8px">Terminal green</span> | IBM Plex Mono | Developer tools, code focus, retro aesthetic |
@@ -142,7 +142,7 @@ This architecture means:
 
 | Token | Light | Dark | Vibrant | Terminal |
 |-------|---------|------|----------|----------|
-| `--font-primary` | Figtree | Hanken Grotesk | Hanken Grotesk | IBM Plex Mono |
+| `--font-primary` | Hanken Grotesk | Hanken Grotesk | Hanken Grotesk | IBM Plex Mono |
 | `--font-monospace` | IBM Plex Mono | IBM Plex Mono | IBM Plex Mono | IBM Plex Mono |
 | `--font-navigation` | IBM Plex Mono | IBM Plex Mono | IBM Plex Mono | IBM Plex Mono |
 
@@ -220,7 +220,7 @@ This architecture means:
 ### Light Theme
 - **Personality**: Clean, professional, approachable
 - **Key Colors**: Yellow accent (#ffff00), subtle grays
-- **Typography**: Figtree (warm, friendly serif alternative)
+- **Typography**: Hanken Grotesk (variable, 100–900)
 - **Best For**: Personal portfolio, blog posts, general content
 
 ### Dark Theme
