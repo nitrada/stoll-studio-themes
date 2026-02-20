@@ -56,6 +56,7 @@ This architecture means:
 | `--color-surface` | <span style="background:#ffffff;color:#000;padding:2px 8px;border:1px solid #ccc">#ffffff</span> | <span style="background:#1a1a1a;color:#fff;padding:2px 8px">#1a1a1a</span> | <span style="background:#3D38F5;color:#fff;padding:2px 8px">#3D38F5</span> | <span style="background:#000000;color:#00FF41;padding:2px 8px;border:1px solid #00FF41">#000000</span> | Main background |
 | `--color-surface-emphasized` | <span style="background:#f5f5f5;color:#000;padding:2px 8px;border:1px solid #ccc">#f5f5f5</span> | <span style="background:#2a2a2a;color:#fff;padding:2px 8px">#2a2a2a</span> | <span style="background:#312CDB;color:#fff;padding:2px 8px">#312CDB</span> | <span style="background:#0A0A0A;color:#00FF41;padding:2px 8px;border:1px solid #00FF41">#0A0A0A</span> | Table headers, cards |
 | `--color-surface-secondary` | <span style="background:#f9f9f9;color:#000;padding:2px 8px;border:1px solid #ccc">#f9f9f9</span> | <span style="background:#242424;color:#fff;padding:2px 8px">#242424</span> | <span style="background:#4942F7;color:#fff;padding:2px 8px">#4942F7</span> | <span style="background:#050505;color:#00FF41;padding:2px 8px;border:1px solid #00FF41">#050505</span> | Code blocks, blockquotes |
+| `--color-image-bg` | <span style="background:#d5d5d5;color:#000;padding:2px 8px;border:1px solid #ccc">#d5d5d5</span> | — | — | — | Background for translucent image cards (light theme only; 60% white composites to `--color-border`) |
 
 ### Border Colors
 

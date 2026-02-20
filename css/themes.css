@@ -39,6 +39,7 @@
   --color-surface: #ffffff;           /* Main background */
   --color-surface-emphasized: #f5f5f5; /* Table headers, cards */
   --color-surface-secondary: #f9f9f9; /* Code blocks, blockquotes */
+  --color-image-bg: #d5d5d5;           /* Background for translucent image cards (60% white composites to --color-border) */
 
   /* Border Colors */
   --color-border: #eee;               /* Primary borders */
