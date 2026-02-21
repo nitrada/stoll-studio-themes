@@ -1,7 +1,0 @@
-{
-  "name": "stoll.studio Token Creator",
-  "id": "stoll-studio-token-creator-v1",
-  "api": "1.0.0",
-  "main": "code.js",
-  "editorType": ["figma"]
-}
