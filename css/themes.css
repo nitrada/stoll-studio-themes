@@ -58,8 +58,7 @@
   /* === SEMANTIC TOKENS === */
   /* These reference base colors for specific purposes */
 
-  --color-background: var(--color-surface); /* Deprecated: Use --color-surface instead */
-  --color-divider: #ccc;
+  --color-divider: #ccc;                     /* Intentionally darker than --color-border-secondary (#e5e5e5) for structural weight */
   --color-link: var(--color-info);
   --color-link-hover: color-mix(in srgb, var(--color-info) 80%, var(--color-black));
   --color-bullet: var(--color-tertiary);
