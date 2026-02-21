@@ -5,9 +5,11 @@
  * Theme switching is controlled via URL parameter: ?theme=themeName
  *
  * Architecture:
- * 1. Base Colors - Define actual color values (text, accents, surfaces, borders)
- * 2. Semantic Tokens - Reference base colors for specific purposes
- * 3. Component Tokens - Reference base/semantic colors for components
+ * 1. Global Constants - Fixed values (black, white, phosphor) never change across themes
+ * 2. Base Colors - Per-theme primitives (text, accents, surfaces, borders)
+ * 3. Status Colors - Per-theme state colors (info, success, error, warning)
+ * 4. Semantic Tokens - Reference base/status colors for specific purposes
+ * 5. Component Tokens - Reference base/semantic colors for specific components
  *
  * To add a new theme:
  * 1. Copy the [data-theme="light"] block
@@ -33,7 +35,8 @@
 
   /* Accent Colors */
   --color-accent-1: #ffff00;          /* Signature yellow */
-  --color-accent-2: #ff0000;          /* Red accent */
+  --color-accent-2: #268bd2;          /* Blue (links, code) */
+  --color-accent-3: #ff0000;          /* Red accent */
 
   /* Surface Colors */
   --color-surface: #ffffff;           /* Main background */
@@ -44,8 +47,9 @@
   /* Border Colors */
   --color-border: #eee;               /* Primary borders */
   --color-border-secondary: #e5e5e5;  /* Secondary borders */
+  --color-border-strong: #cccccc;     /* Structural dividers */
 
-  /* Semantic Colors */
+  /* Status Colors */
   --color-info: #268bd2;              /* Informational (blue) */
   --color-success: #27ae60;           /* Success states (green) */
   --color-error: #e74c3c;             /* Error states (red) */
@@ -58,9 +62,8 @@
   /* === SEMANTIC TOKENS === */
   /* These reference base colors for specific purposes */
 
-  --color-divider: #ccc;                     /* Intentionally darker than --color-border-secondary (#e5e5e5) for structural weight */
+  --color-divider: var(--color-border-strong);
   --color-link: var(--color-info);
-  --color-link-hover: color-mix(in srgb, var(--color-info) 80%, var(--color-black));
   --color-bullet: var(--color-tertiary);
   --color-code: var(--color-accent-2);
   --color-meta: var(--color-tertiary);
@@ -145,6 +148,7 @@
   /* Accent Colors */
   --color-accent-1: #ffff00;
   --color-accent-2: #5dade2;
+  --color-accent-3: #ff0000;
 
   /* Surface Colors */
   --color-surface: #1a1a1a;
@@ -154,31 +158,21 @@
   /* Border Colors */
   --color-border: #333;
   --color-border-secondary: #444;
+  --color-border-strong: #666666;
 
-  /* Semantic Colors */
+  /* Status Colors */
   --color-info: #5dade2;
   --color-success: #2ecc71;
   --color-error: #e74c3c;
   --color-warning: #f39c12;
 
-  /* Pure black/white */
-  --color-black: #000;
-  --color-white: #fff;
-
   /* === SEMANTIC TOKENS === */
-  --color-divider: var(--color-border-secondary);
-  /* Link hover needs custom value for dark theme */
-  --color-link-hover: #7fc4ed;
+  --color-link: var(--color-accent-2);
 
   /* === COMPONENT TOKENS === */
   /* Sticky bar uses Accent 2 (blue) with black text for contrast */
   --color-sticky-bar-bg: var(--color-accent-2);
   --color-sticky-bar-text: var(--color-black);
-
-  /* === TYPOGRAPHY === */
-  /* Dark theme uses different body font - Hanken Grotesk */
-
-  --font-primary: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 
   /* All other tokens inherit from :root */
 }
@@ -197,6 +191,7 @@
   /* Accent Colors */
   --color-accent-1: #FF0080;
   --color-accent-2: #D4FF00;
+  --color-accent-3: #00FFD9;
 
   /* Surface Colors */
   --color-surface: #3D38F5;
@@ -206,32 +201,19 @@
   /* Border Colors */
   --color-border: rgba(255, 255, 255, 0.15);
   --color-border-secondary: rgba(255, 255, 255, 0.2);
+  --color-border-strong: rgba(255, 255, 255, 0.3);
 
-  /* Semantic Colors */
+  /* Status Colors */
   --color-info: #69A0FF;
   --color-success: #00FF33;
   --color-error: #FF3366;
   --color-warning: #FFB800;
 
-  /* Pure black/white */
-  --color-black: #000;
-  --color-white: #fff;
-
   /* === SEMANTIC TOKENS === */
-  --color-divider: var(--color-border-secondary);
-  /* Vibrant theme uses accent-2 (lime) for links */
   --color-link: var(--color-accent-2);
-  --color-link-hover: #E5FF33;
 
   /* Bullet needs custom opacity for vibrant */
   --color-bullet: rgba(255, 255, 255, 0.4);
-
-  /* Code uses accent-1 (pink) */
-  --color-code: var(--color-accent-1);
-
-  /* Meta colors need custom opacity */
-  --color-meta: rgba(255, 255, 255, 0.5);
-  --color-meta-secondary: rgba(255, 255, 255, 0.6);
 
   /* === COMPONENT TOKENS === */
   /* Vibrant theme uses pink for UI elements */
@@ -241,11 +223,6 @@
   --color-skip-link-bg: var(--color-accent-1);
   --color-skip-link-text: var(--color-white);
 
-  /* === TYPOGRAPHY === */
-  /* Vibrant theme uses same typography as dark theme - Hanken Grotesk */
-
-  --font-primary: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-
   /* All other tokens inherit from :root */
 }
 
@@ -253,55 +230,41 @@
 [data-theme="terminal"] {
   /* === BASE COLORS === */
 
-  /* Text Colors */
+  /* Text Colors — phosphor green (#00FF41) at varying opacity on black */
   --color-primary: #00FF41;
-  --color-secondary: #00D936;
-  --color-tertiary: #00B32D;
-  --color-quaternary: #009926;
-  --color-light: #007A1F;
+  --color-secondary: rgba(0, 255, 65, 0.85);
+  --color-tertiary: rgba(0, 255, 65, 0.70);
+  --color-quaternary: rgba(0, 255, 65, 0.60);
+  --color-light: rgba(0, 255, 65, 0.50);
 
-  /* Accent Colors */
-  --color-accent-1: #FFFF00;
-  --color-accent-2: #00FFFF;
+  /* Accent Colors — all phosphor in terminal */
+  --color-accent-1: #00FF41;
+  --color-accent-2: #00FF41;
+  --color-accent-3: #00FF41;
 
   /* Surface Colors */
   --color-surface: #000000;
-  --color-surface-emphasized: #0A0A0A;
-  --color-surface-secondary: #050505;
+  --color-surface-emphasized: #111111;
+  --color-surface-secondary: #222222;
 
   /* Border Colors */
   --color-border: rgba(0, 255, 65, 0.15);
   --color-border-secondary: rgba(0, 255, 65, 0.2);
+  --color-border-strong: rgba(0, 255, 65, 0.30);
 
-  /* Semantic Colors */
+  /* Status Colors */
   --color-info: #00BFFF;
   --color-success: #00FF41;
   --color-error: #FF0000;
   --color-warning: #FFFF00;
 
-  /* Pure black/white */
-  --color-black: #000;
-  --color-white: #fff;
-
   /* === SEMANTIC TOKENS === */
-  --color-divider: var(--color-border-secondary);
+  --color-link: var(--color-accent-2);
 
-  /* Terminal theme uses terminal green for links */
-  --color-link: var(--color-primary);
-  --color-link-hover: #66FF99;
-
-  /* Bullet needs custom opacity */
+  /* Bullet at custom phosphor opacity */
   --color-bullet: rgba(0, 255, 65, 0.4);
 
-  /* Code uses yellow */
-  --color-code: var(--color-accent-1);
-
-  /* Meta colors need custom opacity */
-  --color-meta: rgba(0, 255, 65, 0.5);
-  --color-meta-secondary: rgba(0, 255, 65, 0.6);
-
   /* === COMPONENT TOKENS === */
-  /* Terminal uses green for sticky bar, yellow for other UI elements */
   --color-sticky-bar-bg: var(--color-primary);
   --color-sticky-bar-text: var(--color-black);
   --color-blockquote-border: var(--color-accent-1);
@@ -341,7 +304,7 @@ a {
 
 a:hover,
 a:focus {
-  color: var(--color-link-hover);
+  opacity: 0.75;
 }
 
 /* Strong text */
