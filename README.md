@@ -17,7 +17,7 @@ Shared theming system for all stoll.studio websites. One source of truth for col
 ## Sites Using This System
 
 - [stoll.studio](https://stoll.studio) - Personal portfolio
-- [vibrant.stoll.studio](https://vibrant.stoll.studio) - Teaching resources
+- [teaching.stoll.studio](https://teaching.stoll.studio) - Teaching resources
 
 ## Usage
 
@@ -98,7 +98,7 @@ https://your-site.com?theme=terminal
 1. **This README** — the canonical theme system reference
 2. **`stoll.studio/_pages/designsystem.md`** — living design system docs (tokens, colors, changelog)
 3. **`stoll.studio/README.md`** — developer reference (architecture, conventions)
-4. **`vibrant.stoll.studio/README.md`** — vibrant site reference (available themes, variables)
+4. **`teaching.stoll.studio/README.md`** — teaching site reference (available themes, variables)
 
 ## Development Workflow
 
@@ -124,8 +124,8 @@ git add _themes
 git commit -m "Update to latest themes"
 git push
 
-# Update vibrant.stoll.studio
-cd /path/to/vibrant.stoll.studio
+# Update teaching.stoll.studio
+cd /path/to/teaching.stoll.studio
 git submodule update --remote _themes
 git add _themes
 git commit -m "Update to latest themes"
