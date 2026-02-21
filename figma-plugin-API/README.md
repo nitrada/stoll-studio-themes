@@ -115,7 +115,7 @@ await token.setValueForMode(modeId, { r: 0.4, g: 0.4, b: 0.4, a: 1 });
 
 ## Token Inspector Frames
 
-The Figma design system file contains **4 Token Inspector frames** — one per theme — that visually display resolved token values. They are NOT driven by Figma variables dynamically; they are manually constructed frames that must be kept in sync.
+The Figma design system file contains **4 Token Inspector frames** — one per theme — that visually display resolved token values. The colour swatches are bound to Figma variables, so their colours update automatically when variable values change. What does NOT happen automatically is adding or removing rows — that requires manual work via the plugin API whenever a new token is introduced or removed.
 
 ### Frame node IDs (stable)
 
@@ -164,7 +164,7 @@ dupes.slice(1).forEach(n => n.remove()); // keep first, delete rest
 
 ## designsystem.md Sync
 
-`designsystem.md` lives in `christophe.stoll.studio/_pages/` and is the human-readable source fed to the Figma plugin (`stoll-studio-themes`). It documents each token with its resolved value per theme.
+`designsystem.md` lives in `christophe.stoll.studio/_pages/` and is the human-readable documentation of the design system — useful context for future sessions working on tokens. It records each token's resolved value per theme so it's easy to cross-check CSS, Figma variables, and visible output without having to re-derive values from scratch.
 
 ### Semantic token table format
 
