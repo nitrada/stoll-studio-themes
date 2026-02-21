@@ -6,7 +6,7 @@ This is the **single source of truth** for the stoll.studio theming system. It p
 
 ## Key Files
 
-- `css/themes.css` — All theme definitions (light, dark, vibrant, rating) as CSS custom properties
+- `css/themes.css` — All theme definitions (light, dark, vibrant, terminal) as CSS custom properties
 - `js/theme-switcher.js` — URL-parameter-based theme switching logic
 - `README.md` — Usage guide for consuming sites
 - `THEME_OVERVIEW.md` — Comprehensive token reference and theme comparison
